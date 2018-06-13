@@ -14,7 +14,8 @@ ukretail$weekday <- as.factor(format(as.POSIXct(ukretail$InvoiceDate,format="%Y-
 ukretail$hour <- as.factor(format(as.POSIXct(ukretail$InvoiceDate,format="%Y-%m-%d %H:%M:%S"),"%H"))
 ukretail$sales <-ukretail$Quantity * ukretail$UnitPrice
 ##by date/time
-#look at the hist of date and time
+
+# Look at the histogram of date and time
 d <- ggplot(ukretail,aes(hour))+
   scale_x_discrete()
 d + geom_bar()
